@@ -69,7 +69,7 @@ const MainNavbar = ({ wallet, onMint,isSoldOut,isMinting,isActive }: any) => {
                   <Col>
                     <Button
                       variant="info"
-                      disabled={isSoldOut || isMinting || !isActive}
+                      disabled={isSoldOut || !wallet}
                       onClick={onMint}
                       style={{ whiteSpace: "nowrap", padding: "12px 16px" }}
                     >
