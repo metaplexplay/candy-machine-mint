@@ -15,7 +15,7 @@ import blankmint from "../assets/avatars/blankmint.png";
 import MainNavbar from "../component/MainNavbar";
 import MainFooter from "../component/MainFooter";
 import smp from "../assets/avatars/smp.jpg";
-const HomePage = () => {
+const HomePage = ({ wallet, onMint, isSoldOut }: any) => {
   return (
     <>
       <Container>
@@ -38,12 +38,17 @@ const HomePage = () => {
           style={{ paddingBottom: "20px" }}
         >
           <Col md={6}>
-            <img
-              src={hbtn2}
-              height="40"
-              width="150"
-              style={{ padding: "inherit" }}
-            ></img>
+            {isSoldOut || !wallet ? (
+              ""
+            ) : (
+              <img
+                src={hbtn2}
+                height="40"
+                width="150"
+                style={{ padding: "inherit" }}
+                onClick={onMint}
+              ></img>
+            )}
           </Col>
         </Row>
       </Container>
@@ -154,7 +159,11 @@ const HomePage = () => {
           <Col md={12}>
             <img src={blankmint} height="70%" width="50%" />
             <div className="mainPad10">
-              <img src={hbtn2} height="40" width="150" />
+              {isSoldOut || !wallet ? (
+                ""
+              ) : (
+                <img src={hbtn2} height="40" width="150" onClick={ onMint}/>
+              )}
             </div>
           </Col>
         </Row>

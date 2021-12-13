@@ -13,7 +13,13 @@ const ConnectButton = styled(WalletDialogButton)`
   white-space: nowrap;
 `;
 
-const MainNavbar = ({ wallet, onMint,isSoldOut,isMinting,isActive }: any) => {
+const MainNavbar = ({
+  wallet,
+  onMint,
+  isSoldOut,
+  isMinting,
+  isActive,
+}: any) => {
   return (
     <Navbar
       expand={"xl"}
@@ -48,7 +54,7 @@ const MainNavbar = ({ wallet, onMint,isSoldOut,isMinting,isActive }: any) => {
                 <Nav.Link>Attributes</Nav.Link>
               </LinkContainer>
             </Col> */}
-           
+
             <Col>
               <LinkContainer to="/roadmap">
                 <Nav.Link>Roadmap</Nav.Link>
@@ -67,14 +73,17 @@ const MainNavbar = ({ wallet, onMint,isSoldOut,isMinting,isActive }: any) => {
               <Container fluid>
                 <Row>
                   <Col>
-                    <Button
-                      variant="info"
-                      disabled={isSoldOut || !wallet}
-                      onClick={onMint}
-                      style={{ whiteSpace: "nowrap", padding: "12px 16px" }}
-                    >
-                      Buy Solba
-                    </Button>
+                    {isSoldOut || !wallet ? (
+                      ""
+                    ) : (
+                      <Button
+                        variant="info"
+                        onClick={onMint}
+                        style={{ whiteSpace: "nowrap", padding: "12px 16px" }}
+                      >
+                        Buy Solba
+                      </Button>
+                    )}
                   </Col>
                   <Col>
                     {!wallet ? (

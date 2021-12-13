@@ -171,7 +171,18 @@ const Home = (props: HomeProps) => {
           isActive={isActive}
         />
         <Switch>
-          <Route exact path="/" component={HomePage} />
+          <Route
+            exact
+            path="/"
+            render={(props) => (
+              <HomePage
+                {...props}
+                wallet={wallet}
+                onMint={onMint}
+                isSoldOut={isSoldOut}
+              />
+            )}
+          />
           <Route exact path="/myshiba" component={MyShibas} />
           <Route exact path="/roadmap" component={Roadmap} />
           <Route exact path="/faq" component={Faq} />
