@@ -187,7 +187,7 @@ const Home = (props: HomeProps) => {
           <Route exact path="/roadmap" component={Roadmap} />
           <Route exact path="/faq" component={Faq} />
         </Switch>
-        {wallet && (
+        {/* {wallet && (
           <p>Wallet {shortenAddress(wallet.publicKey.toBase58() || "")}</p>
         )}
 
@@ -197,7 +197,7 @@ const Home = (props: HomeProps) => {
 
         {wallet && <p>Redeemed: {itemsRedeemed}</p>}
 
-        {wallet && <p>Remaining: {itemsRemaining}</p>}
+        {wallet && <p>Remaining: {itemsRemaining}</p>} */}
 
         {/* <MintContainer>
           {!wallet ? (
