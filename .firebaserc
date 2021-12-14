@@ -1,5 +1,17 @@
 {
-  "projects": {
-    "default": "jungle-nft-wb",
+  "targets": {
+    "jungle-nft-wb": {
+      "hosting": {
+        "test": [
+          "test-solba-io"
+        ],
+        "prod": [
+          "jungle-solba-io"
+        ],
+        "endangered": [
+          "jungle-nft-wb"
+        ]
+      }
+    }
   }
 }

@@ -1,11 +1,22 @@
 {
-  "hosting": {
-    "public": "build",
-    "site":"test-solba-io",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ]
-  }
+  "hosting": [
+    {
+      "target":"test",
+      "public": "build",
+      "site": "test-solba-io",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
+    },
+    {
+      "target":"endangered",
+      "public": "build",
+      "site": "jungle-nft-wb",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
+    },
+    {
+      "target":"prod",
+      "public": "build",
+      "site": "jungle-solba-io",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
+    }
+  ]
 }
